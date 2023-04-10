@@ -1,4 +1,4 @@
-package SRP_net
+package srp_net
 
 import (
 	"bufio"
@@ -8,8 +8,8 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/zexy-swami/SRP/SRP_CLI/internal/SRP"
-	"github.com/zexy-swami/SRP/SRP_CLI/pkg/parser"
+	"github.com/finallly/srp_protocol/cli/internal/srp"
+	"github.com/finallly/srp_protocol/cli/pkg/parser"
 )
 
 func StartClientConnection() error {
@@ -29,7 +29,7 @@ func StartClientConnection() error {
 	}
 
 	pfIndex, _ := strconv.Atoi(authenticationResult)
-	clientProver := SRP.NewProver(pfIndex, srpID)
+	clientProver := srp.NewProver(pfIndex, srpID)
 
 	publicAValue := clientProver.GenerateClientPublicValue()
 	conn.Write([]byte(publicAValue.String() + "\n"))
@@ -52,7 +52,7 @@ func StartClientConnection() error {
 
 	fmt.Println("verification passed successfully")
 	conn.Write([]byte("fin.\n"))
-	
+
 	return nil
 }
 

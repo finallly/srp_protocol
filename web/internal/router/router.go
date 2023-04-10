@@ -1,8 +1,8 @@
 package router
 
 import (
+	"github.com/finallly/srp_protocol/web/internal/handlers"
 	"github.com/gin-gonic/gin"
-	"github.com/zexy-swami/SRP/SRP_web/internal/handlers"
 )
 
 func init() {

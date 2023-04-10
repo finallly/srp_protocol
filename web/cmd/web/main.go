@@ -3,8 +3,8 @@ package main
 import (
 	"log"
 
-	"github.com/zexy-swami/SRP/SRP_web/internal/db"
-	"github.com/zexy-swami/SRP/SRP_web/internal/router"
+	"github.com/finallly/srp_protocol/web/internal/db"
+	"github.com/finallly/srp_protocol/web/internal/router"
 )
 
 func main() {

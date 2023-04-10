@@ -1,4 +1,4 @@
-package SRP_net
+package srp_net
 
 import (
 	"bufio"
@@ -7,22 +7,22 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/zexy-swami/SRP/SRP_CLI/internal/SRP"
+	"github.com/finallly/srp_protocol/cli/internal/srp"
 )
 
 func connectionHandler(connection net.Conn) {
 	srpID, _ := bufio.NewReader(connection).ReadString('\n')
 	srpID = strings.Trim(srpID, "\n")
-	if authorized := SRP.CheckUserID(srpID); !authorized {
+	if authorized := srp.CheckUserID(srpID); !authorized {
 		connection.Write([]byte("Sorry, you're not authorized\n"))
 		return
 	}
 
-	pfIndex := SRP.GetPrimeFieldIndex()
+	pfIndex := srp.GetPrimeFieldIndex()
 	pfIndexAsString := strconv.Itoa(pfIndex) + "\n"
 	connection.Write([]byte(pfIndexAsString))
 
-	serverVerifier := SRP.NewVerifier(pfIndex, srpID)
+	serverVerifier := srp.NewVerifier(pfIndex, srpID)
 	publicClientValue, _ := bufio.NewReader(connection).ReadString('\n')
 	publicClientValue = strings.Trim(publicClientValue, "\n")
 

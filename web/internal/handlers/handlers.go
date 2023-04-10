@@ -5,9 +5,9 @@ import (
 	"net/http"
 	"strings"
 
+	"github.com/finallly/srp_protocol/web/internal/db"
+	"github.com/finallly/srp_protocol/web/pkg/validation"
 	"github.com/gin-gonic/gin"
-	"github.com/zexy-swami/SRP/SRP_web/internal/db"
-	"github.com/zexy-swami/SRP/SRP_web/pkg/validation"
 )
 
 func rootHandler(c *gin.Context) {

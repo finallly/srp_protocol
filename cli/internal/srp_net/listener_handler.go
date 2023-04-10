@@ -1,4 +1,4 @@
-package SRP_net
+package srp_net
 
 import "net"
 

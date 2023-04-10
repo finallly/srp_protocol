@@ -1,4 +1,4 @@
-package SRP
+package srp
 
 import (
 	"math/big"
@@ -6,7 +6,7 @@ import (
 	"strings"
 	"time"
 
-	"github.com/zexy-swami/SRP/SRP_CLI/pkg/big_int_handlers"
+	"github.com/finallly/srp_protocol/cli/pkg/big_int_handlers"
 )
 
 type primeField struct {

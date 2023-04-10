@@ -1,4 +1,4 @@
-package SRP
+package srp
 
 import "math/big"
 

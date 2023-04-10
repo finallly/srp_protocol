@@ -1,11 +1,11 @@
-package SRP
+package srp
 
 import (
 	"crypto/sha256"
 	"math/big"
 
-	"github.com/zexy-swami/SRP/SRP_CLI/internal/db"
-	"github.com/zexy-swami/SRP/SRP_CLI/pkg/big_int_handlers"
+	"github.com/finallly/srp_protocol/cli/internal/db"
+	"github.com/finallly/srp_protocol/cli/pkg/big_int_handlers"
 )
 
 type Verifier struct {

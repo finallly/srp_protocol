@@ -4,9 +4,9 @@ import (
 	"log"
 	"net"
 
-	"github.com/zexy-swami/SRP/SRP_CLI/internal/SRP_net"
-	"github.com/zexy-swami/SRP/SRP_CLI/internal/db"
-	"github.com/zexy-swami/SRP/SRP_CLI/pkg/parser"
+	"github.com/finallly/srp_protocol/cli/internal/db"
+	"github.com/finallly/srp_protocol/cli/internal/srp_net"
+	"github.com/finallly/srp_protocol/cli/pkg/parser"
 )
 
 const configName = "config_server"
@@ -25,7 +25,7 @@ func main() {
 	if err != nil {
 		log.Fatalln(err.Error())
 	}
-	SRP_net.ListenerHandler(listener)
+	srp_net.ListenerHandler(listener)
 }
 
 func getAddress() string {

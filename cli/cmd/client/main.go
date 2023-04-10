@@ -3,8 +3,8 @@ package main
 import (
 	"log"
 
-	"github.com/zexy-swami/SRP/SRP_CLI/internal/SRP_net"
-	"github.com/zexy-swami/SRP/SRP_CLI/pkg/parser"
+	"github.com/finallly/srp_protocol/cli/internal/srp_net"
+	"github.com/finallly/srp_protocol/cli/pkg/parser"
 )
 
 const configName = "config"
@@ -14,7 +14,7 @@ func main() {
 		log.Fatalln(err.Error())
 	}
 
-	if err := SRP_net.StartClientConnection(); err != nil {
+	if err := srp_net.StartClientConnection(); err != nil {
 		log.Fatalln(err.Error())
 	}
 }

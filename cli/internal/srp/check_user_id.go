@@ -1,6 +1,6 @@
-package SRP
+package srp
 
-import "github.com/zexy-swami/SRP/SRP_CLI/internal/db"
+import "github.com/finallly/srp_protocol/cli/internal/db"
 
 func CheckUserID(userID string) bool {
 	count := db.GetCount(userID)
